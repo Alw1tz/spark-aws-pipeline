@@ -1,0 +1,17 @@
+# Credentials — never commit these
+.env
+
+# Airflow generated files
+airflow/logs/
+airflow/config/
+airflow/.ivy2/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+
+# OS
+.DS_Store
