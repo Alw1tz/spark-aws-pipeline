@@ -1,4 +1,4 @@
-FROM apache/airflow:3.2.2
+FROM apache/airflow:3.2.2-python3.10
 USER root
 RUN apt-get update \
     && apt-get install -y --no-install-recommends openjdk-17-jdk-headless \

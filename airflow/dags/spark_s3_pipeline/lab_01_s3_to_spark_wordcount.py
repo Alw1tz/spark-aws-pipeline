@@ -78,9 +78,9 @@ with DAG(
     )
 
     @task
-    def read_result(ds_nodash: str = None, **context):
+    def read_result(ds_nodash: str = None):
         from utils.commons import list_s3_objects, download_from_s3
-        prefix = f'spark-output/{context["ds_nodash"]}/'
+        prefix = f'spark-output/{ds_nodash}/'
         keys = [k for k in list_s3_objects(S3_BUCKET, prefix=prefix) if 'part-' in k]
         if not keys:
             raise FileNotFoundError(f'No Spark output found under s3://{S3_BUCKET}/{prefix}')
